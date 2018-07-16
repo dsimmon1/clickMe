@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>Apocalypse</title>
+
+</head>
+<body>
+<div id="main">
+	<h3 id="info">Press Outbreak to start the zombie apocalypse!</h3>
+	<h6>Pressing outbreak will cause you to be surronded by 40 zombies. You can either use a machete to kill them slowly or a grenade to kill them all at once. Good Luck.</h6>
+	<hr>
+	<button id="add" class="mainButtons" onclick="addButtons()">Outbreak</button>
+	<button id="slow" class="mainButtons" onclick="slowButtons()">Machete</button>
+	<button id="remove" class="mainButtons" onclick="clearButtons()">Grenade</button>
+</div>
+<div id="space">
+	
+</div>
+</body>
+</html>
+<script type="text/javascript">
+
+
+	var space = document.getElementById("space");
+	var addedButtons = document.getElementsByClassName("addedButtons");
+	var ids = [];
+	var zombie = document.createElement("audio");
+		zombie.setAttribute("src", "sounds/zombies.mp3");
+	var grenade = document.createElement("audio");
+		grenade.setAttribute("src", "sounds/grenade.mp3");
+	var machete = document.createElement("audio");
+		machete.setAttribute("src", "sounds/machete.mp3");
+
+	function addButtons() {
+		zombie.play();
+		for (var i = 0; i < 40; i++) {
+			var button = document.createElement("button");
+			var id = "button " + i;
+			ids.push(id);
+			button.setAttribute("Id", "button " + i);
+			button.setAttribute("Class", "addedButtons");
+			button.setAttribute("name", "button " + i);
+			button.setAttribute("style", "background: url('images/zombie.svg')");
+			button.addEventListener("click", display);
+			space.appendChild(button);
+		}
+	}
+
+	function clearButtons() {
+		grenade.play();
+		space.remove(addedButtons);
+		setTimeout(function(){window.location.reload(false);}, 2000);
+	
+	}
+
+	function slowButtons() {
+
+		for (var i=0;i<40;i++) {
+   		(function(ind) {
+       	
+       	setTimeout(
+       		function(){console.log(document.getElementById(ids[ind]).outerHTML = "");machete.play();}, 1000 + (3000 * ind));
+   		
+   		})(i);
+}
+
+	}
+
+	function display() {
+    	name = this.getAttribute('name');
+    	alert(name);
+	};
+
+</script>
