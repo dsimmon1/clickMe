@@ -1,0 +1,37 @@
+body {
+	background: url("../images/field.jpg");
+}
+
+#main {
+	text-align: center;
+	font-family: "Georgia", Times, serif;
+	color: rgb(195,32,69);
+	font-size:3vw;
+}
+
+.mainButtons {
+	background-color: rgb(52,0,31); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mainButtons {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.addedButtons {
+	background-color: rgb(52,0,31);
+    border: none;
+    color: white;
+    padding: 50px 50px;
+    margin: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
